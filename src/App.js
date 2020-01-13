@@ -3,7 +3,14 @@ import logo from './logo.svg'
 import './App.css'
 
 class Contador extends Component {
-  state = { contador: 1 }
+  constructor () {
+    super()
+    this.state = { contador: 1 }
+
+    setInterval(() => {
+      this.setState({ contador: this.state.contador + 1 })
+    }, 1000)
+  }
 
   render () {
     return <span>{this.state.contador}</span>

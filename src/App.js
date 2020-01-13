@@ -2,21 +2,22 @@ import React, {Component} from 'react'
 import logo from './logo.svg'
 import './App.css'
 
-class Title extends Component {
-  render () {
-    return <h1>{this.props.text}</h1>
+class Contador extends Component {
+  constructor() {
+    super()
+    this.state = { contador: 1 }
   }
-}
-
-Title.defaultProps = {
-  text: 'Título por defecto'
+  render () {
+    return <span>{this.state.contador}</span>
+  }
 }
 
 class App extends Component {
   render () {
     return (
       <div className="App">
-        <Title text='Otro título desde props' />
+        <p>Primer component con state</p>
+        <Contador />
       </div>
     )
   }

@@ -14,17 +14,27 @@ class Hello extends Component {
 
 class Text extends Component {
   render() {
+    const {
+      isActivated,
+      arrayOfNumbers,
+      multiply,
+      text,
+      number,
+      objectWithInfo,
+      title
+    } = this.props
 
-    const textSegunBool = this.props.isActivated ? 'On' : 'Off'
-    const mappedNumbers = this.props.arrayOfNumbers.map(n => n * 2)
+    const textSegunBool = isActivated ? 'On' : 'Off'
+    const mappedNumbers = arrayOfNumbers.map(multiply)
 
     return (
       <>
-        <p>{this.props.text}</p>
-        <p>{this.props.number}</p>
+        {title}
+        <p>{text}</p>
+        <p>{number}</p>
         <p>{mappedNumbers}</p>
         <p>{textSegunBool}</p>
-        <p>{this.props.objectWithInfo.key}</p>
+        <p>{objectWithInfo.key}</p>
       </>
     )
   }
@@ -44,8 +54,10 @@ class App extends Component {
             arrayOfNumbers={[2, 3, 10]}
             objectWithInfo={{ key: 'First Value', key2: 'otherValue' }}
             isActivated
+            multiply={(number) => number * 4}
             number={2}
             text='Texto en String'
+            title={<h1>Esto es un H1</h1>}
           />
         </header>
       </div>

@@ -1,11 +1,10 @@
 import React, {Component} from 'react'
-import logo from './logo.svg'
-import './App.css'
 
 class Contador extends Component {
-  constructor () {
-    super()
-    this.state = { contador: 1 }
+  constructor (props) {
+    super(props)
+    console.log(props)
+    this.state = { contador: this.props.contadorInicial }
 
     setInterval(() => {
       this.setState({ contador: this.state.contador + 1 })
@@ -15,6 +14,10 @@ class Contador extends Component {
   render () {
     return <ContadorNumero numero={this.state.contador} />
   }
+}
+
+Contador.defaultProps = {
+  contadorInicial: 100
 }
 
 class ContadorNumero extends Component {

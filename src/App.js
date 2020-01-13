@@ -3,10 +3,8 @@ import logo from './logo.svg'
 import './App.css'
 
 class Contador extends Component {
-  constructor() {
-    super()
-    this.state = { contador: 1 }
-  }
+  state = { contador: 1 }
+
   render () {
     return <span>{this.state.contador}</span>
   }

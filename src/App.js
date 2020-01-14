@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import ComponentWillMount from './sections/life-cycle/componentWillMount'
+import Render from './sections/life-cycle/Render'
 
 class App extends Component {
 
   render () {
     return (
       <div className="App">
-        <ComponentWillMount />
+        <Render />
       </div>
     )
   }

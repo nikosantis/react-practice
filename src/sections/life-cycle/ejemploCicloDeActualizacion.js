@@ -39,6 +39,21 @@ class AnimalImage extends Component {
     })
   }
 
+  componentDidUpdate (prevProps, prevState) {
+    console.log('4. componentDidUpdate')
+    const img = document.querySelector('img')
+    // web animation api
+    img.animate([ {
+      filter: 'blur(2px)'
+    }, {
+      filter: 'blur(0px)'
+    } ], {
+      duration: 1500,
+      easing: 'ease'
+    })
+    console.log('from img element', { alt: img.alt })
+  }
+
   render () {
     console.log('|-> render')
     return (

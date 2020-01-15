@@ -1,9 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class BitCoinPrice extends Component {
-  _renderCurrencies () {
-    const { bpi } = this.props
-
+const BitCoinPrice = ({ bpi }) => {
+  const _renderCurrencies = () => {
     const currencies = Object.keys(bpi) // ['EUR', 'GBP', 'USD']
     return currencies.map(currency => (
       <div key={currency}>
@@ -13,14 +11,12 @@ class BitCoinPrice extends Component {
     ))
   }
 
-  render () {
-    return (
-      <div>
-        <h4>Bitcoin Price Index</h4>
-        {this._renderCurrencies()}
-      </div>
-    )
-  }
+  return (
+    <div>
+      <h4>Bitcoin Price Index</h4>
+      {_renderCurrencies(bpi)}
+    </div>
+  )
 }
 
 export default BitCoinPrice

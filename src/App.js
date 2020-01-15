@@ -1,19 +1,5 @@
 import React, { Component } from 'react'
-
-// class Article extends Component {
-//   render () {
-//     return (
-//       <section>
-//         <h2>{this.props.title}</h2>
-//         <p><em>Escrito por {this.props.author}</em></p>
-//         <date>{this.props.date}</date>
-//         <article>
-//           {this.props.children}
-//         </article>
-//       </section>
-//     )
-//   }
-// }
+import PropTypes from 'prop-types'
 
 const Article = props => {
   return (
@@ -28,21 +14,27 @@ const Article = props => {
   )
 }
 
-// class Button extends Component {
-//   render () {
-//     return (
-//       <button style={{ borderColor: this.props.borderColor, display: 'block' }}>
-//         {this.props.label}
-//       </button>
-//     )
-//   }
-// }
+Article.propTypes = {
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  children: PropTypes.any
+}
 
-const Button = ({ borderColor, label }) => (
+const Button = ({ borderColor = 'red', label }) => (
   <button style={{ borderColor, display: 'block' }}>
     {label}
   </button>
 )
+
+// Button.defaultProps = {
+//   borderColor: 'blue'
+// }
+
+Button.propTypes = {
+  borderColor: PropTypes.string,
+  label: PropTypes.string.isRequired
+}
 
 class App extends Component {
   render () {

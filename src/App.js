@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import EjemploDeComponentWillUnmount from './sections/life-cycle/componentWillUnmount.js'
+import EjemploDeComponentDidCatch from './sections/life-cycle/componentDidCatch.js'
 
 class App extends Component {
   render () {
     return (
       <div className="App">
-        <EjemploDeComponentWillUnmount />
+        <EjemploDeComponentDidCatch />
       </div>
     )
   }
